@@ -1,0 +1,153 @@
+
+    /* Stile für das Frontend-Design */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      grid-template-columns: repeat(10, 1fr);
+      grid-template-rows: repeat(11, 1fr);
+      height: 100vh;
+    }
+
+    /* Stile für die Hauptnavigation */
+    .navbar {
+      background-color: #FFFFFF;
+      color: black;
+      grid-column: 1 / -1;
+      padding: 10px;
+      grid-row: 1;
+      position: fixed; 
+      width: 100%; 
+    }
+
+    .navbar ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+    }
+
+    .navbar li {
+  	margin: 0 40px;
+  	transition: transform 0.3s ease;
+	}
+	
+	.navbar a {
+  	color: #505566;
+  	text-decoration: none;
+  	display: inline-block;
+  	padding: 5px;
+  	border-radius: 5px;
+	}
+
+	.navbar a:hover {
+  	background-color: #E4EDFD;
+  	transform: scale(1.05);
+	}
+    
+    /* Stile für die verschiedenen Abschnitte */
+    section {
+      background-color: #f4f4f4;
+      padding: 20px;
+      margin: 0; /* Kein Außenabstand zwischen den Spalten */
+    }
+    
+    section h2 {
+  	font-size: 16px;
+  	color: #404351
+	}
+
+    /* Stile für die verschiedenen Abschnitte */
+    .updates-section {
+  	background-color: #F2F7FF;
+  	padding: 20px;
+  	border-radius: 5px;
+  	margin: 5px 5px;
+  	grid-column: span 2;
+  	grid-row: 2 / 6;
+	}
+
+	.conversation-history {
+ 	background-color: #F2F7FF;
+  	padding: 20px;
+  	border-radius: 5px;
+  	margin: 5px 5px;
+  	grid-column: span 2;
+  	grid-row: span 6;
+	}
+
+    .chatbot-info {
+      background-color: #F2F7FF;
+      padding: 1px;
+      border-radius: 20px;
+      margin: 5px 0px;
+      grid-column: 3 / span 6;
+      grid-row: 2;
+    }
+    
+    .chatbot-info ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+    }
+
+    .chatbot-info li {
+  	margin: 0 40px;
+  	transition: transform 0.3s ease;
+	}
+	
+	.chatbot-info a {
+  	color: #505566;
+  	text-decoration: none;
+  	display: inline-block;
+  	padding: 5px;
+  	border-radius: 5px;
+	}
+
+	.chatbot-info a:hover {
+  	background-color: #E4EDFD;
+  	transform: scale(1.05);
+	}
+
+    .chatbot-conversation {
+      background-color: #FFFFFF;
+      padding: 20px;
+      margin: 0;
+      grid-column: 3 / span 6;
+      grid-row: 3 / 10;
+    }
+
+    .input-field {
+    position: relative;
+    background-color: #FFFFFF;
+    color: white;
+    padding: 20px;
+    margin: 0;
+    grid-column: 3 / span 6;
+    grid-row: 11;
+    align-self: end;
+  }
+
+  .input-field textarea {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background-color: #FFFFFF;
+    color: white;
+    resize: none;
+    overflow: auto;
+  }
+  
+  .additional-info {
+      background-color: #F2F7FF;
+      padding: 20px;
+      border-radius: 5px;
+  	  margin: 5px 5px;
+      grid-column: 9 / span 10;
+      grid-row: 2 / span 10;
+   }
