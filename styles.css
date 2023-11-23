@@ -66,16 +66,16 @@
   	border-radius: 5px;
   	margin: 5px 5px;
   	grid-column: span 2;
-  	grid-row: 2 / 6;
+  	grid-row: 2 / span 5;
 	}
 
-	.conversation-history {
+	.history {
  	background-color: #F2F7FF;
   	padding: 20px;
   	border-radius: 5px;
   	margin: 5px 5px;
   	grid-column: span 2;
-  	grid-row: span 6;
+  	grid-row: 7 / span 5;
 	}
 
     .chatbot-info {
@@ -119,6 +119,30 @@
       margin: 0;
       grid-column: 3 / span 6;
       grid-row: 3 / 10;
+    }
+    
+    .conversation-container {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .user-message {
+        background-color: #E4EDFD;
+        color: #505566;
+        padding: 10px;
+        border-radius: 10px;
+        align-self: flex-start;
+        max-width: 70%;
+    }   
+
+    .bot-message {
+        background-color: #F2F7FF;
+        color: #505566;
+        padding: 10px;
+        border-radius: 10px;
+        align-self: flex-end;
+        max-width: 70%;
     }
 
     .input-field {
