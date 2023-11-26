@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <title>Rechtsberatung Plattform</title>
   <link rel="stylesheet" href="styles.css">
-  </head>
-	
+  <script src="https://cdn.jsdelivr.net/npm/markdown-it/dist/markdown-it.min.js"></script>
+</head>
 <body>
   <nav class="navbar">
     <!-- Hauptnavigation -->
@@ -15,6 +15,12 @@
       <li><a href="#kontakt">Kontakt</a></li>
       <li><a href="#datenschutz">Datenschutz</a></li>
       <li><a href="#login">Login</a></li>
+      <li>
+        <label class="switch">
+          <input type="checkbox" id="dark-mode-toggle">
+          <span class="slider round"></span>
+        </label>
+      </li>
     </ul>
   </nav>
 
@@ -28,9 +34,9 @@
   <!-- Weitere Sections hier -->
 
   <section class="chatbot-info">
-  	<!-- 2. Spalte: Chatbot-Beschreibung und Anleitung -->
-  	<ul><li><a href="#ki-anwalt">Hier gehts zur Chatbot-Anleitung</a></li></ul>
-	</section>
+    <!-- 2. Spalte: Chatbot-Beschreibung und Anleitung -->
+    <ul><li><a href="#ki-anwalt">Hier gehts zur Chatbot-Anleitung</a></li></ul>
+  </section>
 
   <!-- Weitere Sections hier -->
 
@@ -45,15 +51,22 @@
   <section class="history">
     <!-- 4. Spalte: Konversationshistorie -->
     <h2>Konversationshistorie</h2>
-    <p>Hier wird die Historie der Konversationen mit dem Chatbot angezeigt.</p>
+    <ul class="conversation-list">
+      <!-- Hier werden die Konversationen angezeigt -->
+      <li class="conversation-list-item">
+        <div class="object">Konversation 1</div>
+      </li>
+      <li class="conversation-list-item">
+        <div class="object">Konversation 2</div>
+      </li>
+    </ul>
+    <button onclick="startNewConversation()">Neue Konversation</button>
   </section>
 
   <!-- Weitere Sections hier -->
 
   <section class="chatbot-conversation">
     <!-- 5. Spalte: Chatbot-Konversation -->
-    <h2>Chatbot-Konversation</h2>
-    <p>Konversation wird hier dargestellt.</p>
     <!-- Hier wird die aktuelle Konversation mit dem Chatbot angezeigt -->
     <div class="conversation-container">
       <!-- Konversation wird hier dargestellt -->
@@ -63,10 +76,18 @@
 
   <section class="input-field">
     <!-- 6. Spalte: Eingabefeld -->
-    <input type="text" id="user-input" placeholder="Geben Sie Ihre Frage ein..." style= "width: 90%;">
-     <button onclick="sendMessage()">Senden</button>
+    <input type="text" id="user-input" placeholder="Geben Sie Ihre Frage ein..." style="width: 90%;" onkeydown="handleKeyDown(event)">
+    <button onclick="sendMessage()">Senden</button>
+    <button onclick="uploadFile()">Datei hochladen</button>
   </section>
 
+  <script src="main.js"></script>
+  <script>
+    function handleKeyDown(event) {
+      if (event.keyCode === 13) {
+        sendMessage();
+      }
+    }
+  </script>
 </body>
-<script src="main.js"></script>
 </html>

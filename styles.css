@@ -1,177 +1,274 @@
+/* Stile für das Frontend-Design */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: repeat(11, 1fr);
+  height: 100vh;
+}
 
-    /* Stile für das Frontend-Design */
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      display: grid;
-      grid-template-columns: repeat(10, 1fr);
-      grid-template-rows: repeat(11, 1fr);
-      height: 100vh;
-    }
+/* Stile für die Hauptnavigation */
+.navbar {
+  background-color: #FFFFFF;
+  color: black;
+  grid-column: 1 / -1;
+  padding: 10px;
+  grid-row: 1;
+  position: fixed; 
+  width: 100%; 
+}
 
-    /* Stile für die Hauptnavigation */
-    .navbar {
-      background-color: #FFFFFF;
-      color: black;
-      grid-column: 1 / -1;
-      padding: 10px;
-      grid-row: 1;
-      position: fixed; 
-      width: 100%; 
-    }
+.navbar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
 
-    .navbar ul {
-      list-style-type: none;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      justify-content: center;
-    }
+.navbar li {
+  margin: 0 40px;
+  transition: transform 0.3s ease;
+}
 
-    .navbar li {
-  	margin: 0 40px;
-  	transition: transform 0.3s ease;
-	}
-	
-	.navbar a {
-  	color: #505566;
-  	text-decoration: none;
-  	display: inline-block;
-  	padding: 5px;
-  	border-radius: 5px;
-	}
+.navbar a {
+  color: #505566;
+  text-decoration: none;
+  display: inline-block;
+  padding: 5px;
+  border-radius: 5px;
+}
 
-	.navbar a:hover {
-  	background-color: #E4EDFD;
-  	transform: scale(1.05);
-	}
-    
-    /* Stile für die verschiedenen Abschnitte */
-    section {
-      background-color: #f4f4f4;
-      padding: 20px;
-      margin: 0; /* Kein Außenabstand zwischen den Spalten */
-    }
-    
-    section h2 {
-  	font-size: 16px;
-  	color: #404351
-	}
+.navbar a:hover {
+  background-color: #E4EDFD;
+  transform: scale(1.05);
+}
 
-    /* Stile für die verschiedenen Abschnitte */
-    .updates-section {
-  	background-color: #F2F7FF;
-  	padding: 20px;
-  	border-radius: 5px;
-  	margin: 5px 5px;
-  	grid-column: span 2;
-  	grid-row: 2 / span 5;
-	}
+/* Stile für den Dark Mode */
+body.dark-mode {
+  background-color: #202124;
+  color: #FFFFFF;
+}
 
-	.history {
- 	background-color: #F2F7FF;
-  	padding: 20px;
-  	border-radius: 5px;
-  	margin: 5px 5px;
-  	grid-column: span 2;
-  	grid-row: 7 / span 5;
-	}
+/* Restliche CSS-Stile */
 
-    .chatbot-info {
-      background-color: #F2F7FF;
-      padding: 1px;
-      border-radius: 20px;
-      margin: 5px 0px;
-      grid-column: 3 / span 6;
-      grid-row: 2;
-    }
-    
-    .chatbot-info ul {
-      list-style-type: none;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      justify-content: center;
-    }
+/* Stile für den Dark Mode-Switch */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+  margin-left: 10px;
+}
 
-    .chatbot-info li {
-  	margin: 0 40px;
-  	transition: transform 0.3s ease;
-	}
-	
-	.chatbot-info a {
-  	color: #505566;
-  	text-decoration: none;
-  	display: inline-block;
-  	padding: 5px;
-  	border-radius: 5px;
-	}
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
 
-	.chatbot-info a:hover {
-  	background-color: #E4EDFD;
-  	transform: scale(1.05);
-	}
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 20px;
+}
 
-    .chatbot-conversation {
-      background-color: #FFFFFF;
-      padding: 20px;
-      margin: 0;
-      grid-column: 3 / span 6;
-      grid-row: 3 / 10;
-    }
-    
-    .conversation-container {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-    }
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 14px;
+  width: 14px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
 
-    .user-message {
-        background-color: #E4EDFD;
-        color: #505566;
-        padding: 10px;
-        border-radius: 10px;
-        align-self: flex-start;
-        max-width: 70%;
-    }   
+input:checked + .slider {
+  background-color: #2196F3;
+}
 
-    .bot-message {
-        background-color: #F2F7FF;
-        color: #505566;
-        padding: 10px;
-        border-radius: 10px;
-        align-self: flex-end;
-        max-width: 70%;
-    }
+input:checked + .slider:before {
+  transform: translateX(20px);
+}
 
-    .input-field {
-    position: relative;
-    background-color: #FFFFFF;
-    color: white;
-    padding: 20px;
-    margin: 0;
-    grid-column: 3 / span 6;
-    grid-row: 11;
-    align-self: end;
-  }
+.slider.round {
+  border-radius: 20px;
+}
 
-  .input-field textarea {
-    box-sizing: border-box;
-    width: 100%;
-    padding: 10px;
-    border: none;
-    background-color: #FFFFFF;
-    color: white;
-    resize: none;
-    overflow: auto;
-  }
-  
-  .additional-info {
-      background-color: #F2F7FF;
-      padding: 20px;
-      border-radius: 5px;
-  	  margin: 5px 5px;
-      grid-column: 9 / span 10;
-      grid-row: 2 / span 10;
-   }
+.slider.round:before {
+  border-radius: 50%;
+}
+
+/* Stile für die verschiedenen Abschnitte */
+section {
+  background-color: #f4f4f4;
+  padding: 20px;
+  margin: 0; /* Kein Außenabstand zwischen den Spalten */
+}
+
+section h2 {
+  font-size: 16px;
+  color: #404351;
+}
+
+.updates-section {
+  background-color: #F2F7FF;
+  padding: 20px;
+  border-radius: 5px;
+  margin: 5px 5px;
+  grid-column: span 2;
+  grid-row: 2 / span 5;
+}
+
+.history {
+  background-color: #F2F7FF;
+  padding: 20px;
+  border-radius: 5px;
+  margin: 5px 5px;
+  overflow-y: scroll;
+  grid-column: span 2;
+  grid-row: 7 / span 5;
+}
+
+.conversation-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.conversation-list-item {
+  margin-bottom: 10px;
+}
+
+.conversation-list-item .object {
+  background-color: #E4EDFD;
+  color: #505566;
+  padding: 10px;
+  border-radius: 10px;
+  max-width: 70%;
+}
+
+.chatbot-info {
+  background-color: #F2F7FF;
+  padding: 1px;
+  border-radius: 20px;
+  margin: 5px 0px;
+  grid-column: 3 / span 6;
+  grid-row: 2;
+}
+
+.chatbot-info ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.chatbot-info li {
+  margin: 0 40px;
+  transition: transform 0.3s ease;
+}
+
+.chatbot-info a {
+  color: #505566;
+  text-decoration: none;
+  display: inline-block;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.chatbot-info a:hover {
+  background-color: #E4EDFD;
+  transform: scale(1.05);
+}
+
+.chatbot-conversation {
+  background-color: #FFFFFF;
+  padding: 20px;
+  margin: 0;
+  grid-column: 3 / span 6;
+  grid-row: 3 / 10;
+  overflow-y: scroll;
+}
+
+.conversation-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.user-message {
+  background-color: #E4EDFD;
+  color: #505566;
+  padding: 10px;
+  border-radius: 10px;
+  align-self: flex-start;
+  max-width: 70%;
+}
+
+.bot-message {
+  background-color: #F2F7FF;
+  color: #505566;
+  padding: 10px;
+  border-radius: 10px;
+  align-self: flex-end;
+  max-width: 70%;
+}
+
+.input-field {
+  position: relative;
+  background-color: #E4EDFD;
+  padding: 10px;
+  border-radius: 10px;
+  margin: 0;
+  grid-column: 3 / span 6;
+  grid-row: 11;
+  align-self: end;
+}
+
+.input-field input[type="text"] {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 10px;
+  border: none;
+  background-color: #FFFFFF;
+  color: #505566;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.input-field button {
+  background-color: #FFFFFF;
+  color: #505566;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.input-field button:hover {
+  background-color: #E4EDFD;
+}
+
+
+.additional-info {
+  background-color: #F2F7FF;
+  padding: 20px;
+  border-radius: 5px;
+  margin: 5px 5px;
+  grid-column: 9 / span 10;
+  grid-row: 2 / span 10;
+}
