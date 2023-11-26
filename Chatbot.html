@@ -24,62 +24,47 @@
     </ul>
   </nav>
 
-  <!-- Hauptinhalt in drei Spalten aufgeteilt -->
+  <!-- 1. Spalte: Updates zum Fall -->
   <section class="updates-section">
-    <!-- 1. Spalte: Updates zum Fall -->
-    <h2>Updates und Neuigkeiten zum aktuellen Fall</h2>
-    <p>Hier werden Updates und Neuigkeiten zum aktuellen Fall angezeigt.</p>
+    <h2>Updates und Neuigkeiten</h2>
   </section>
 
-  <!-- Weitere Sections hier -->
-
+  <!-- 2. Spalte: Chatbot-Beschreibung und Anleitung -->
   <section class="chatbot-info">
-    <!-- 2. Spalte: Chatbot-Beschreibung und Anleitung -->
     <ul><li><a href="#ki-anwalt">Hier gehts zur Chatbot-Anleitung</a></li></ul>
   </section>
 
-  <!-- Weitere Sections hier -->
-
+  <!-- 3. Spalte: Zusätzliche Informationen -->
   <section class="additional-info">
-    <!-- 3. Spalte: Zusätzliche Informationen -->
     <h2>Zusätzliche Informationen und Ratschläge</h2>
-    <p>Hier werden zusätzliche Informationen und Ratschläge angezeigt.</p>
   </section>
 
-  <!-- Weitere Sections hier -->
-
+  <!-- 4. Spalte: Konversationshistorie -->
   <section class="history">
-    <!-- 4. Spalte: Konversationshistorie -->
     <h2>Konversationshistorie</h2>
-    <ul class="conversation-list">
-      <!-- Hier werden die Konversationen angezeigt -->
-      <li class="conversation-list-item">
-        <div class="object">Konversation 1</div>
-      </li>
-      <li class="conversation-list-item">
-        <div class="object">Konversation 2</div>
-      </li>
-    </ul>
     <button onclick="startNewConversation()">Neue Konversation</button>
+    <ul id="conversation-list" class="conversation-list">
+      <!-- Hier werden die Konversationen angezeigt -->
+    </ul>
   </section>
 
-  <!-- Weitere Sections hier -->
-
+  <!-- 5. Spalte: Chatbot-Konversation -->
   <section class="chatbot-conversation">
-    <!-- 5. Spalte: Chatbot-Konversation -->
-    <!-- Hier wird die aktuelle Konversation mit dem Chatbot angezeigt -->
-    <div class="conversation-container">
+    <div id="conversation-container" class="conversation-container">
       <!-- Konversation wird hier dargestellt -->
     </div>
-
   </section>
 
+  <!-- 6. Spalte: Eingabefeld -->
   <section class="input-field">
-    <!-- 6. Spalte: Eingabefeld -->
-    <input type="text" id="user-input" placeholder="Geben Sie Ihre Frage ein..." style="width: 90%;" onkeydown="handleKeyDown(event)">
+    <input type="text" id="user-input" placeholder="Geben Sie Ihre Frage ein..." style="width: 90%;" onkeydown="handleKeyDown(event)" autofocus>
     <button onclick="sendMessage()">Senden</button>
-    <button onclick="uploadFile()">Datei hochladen</button>
+    <input type="file" id="file-upload" onchange="uploadFile()" style="display: none;">
+    <label for="file-upload" class="custom-file-upload">Datei hochladen</label>
   </section>
+  
+  
+  
 
   <script src="main.js"></script>
   <script>

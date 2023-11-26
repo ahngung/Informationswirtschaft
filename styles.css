@@ -140,10 +140,26 @@ section h2 {
   grid-row: 7 / span 5;
 }
 
+.history button {
+  background-color: #FFFFFF;
+  color: #505566;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.history button:hover {
+  background-color: #E4EDFD;
+}
+
 .conversation-list {
   list-style-type: none;
   margin: 0;
   padding: 0;
+  cursor: pointer;
 }
 
 .conversation-list-item {
@@ -156,6 +172,10 @@ section h2 {
   padding: 10px;
   border-radius: 10px;
   max-width: 70%;
+}
+
+.conversation-list-item .object:hover {
+  background-color: #F2F7FF;
 }
 
 .chatbot-info {
@@ -260,6 +280,21 @@ section h2 {
 }
 
 .input-field button:hover {
+  background-color: #E4EDFD;
+}
+
+.custom-file-upload {
+  background-color: #FFFFFF;
+  color: #505566;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.custom-file-upload:hover {
   background-color: #E4EDFD;
 }
 
