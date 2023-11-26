@@ -130,6 +130,22 @@ section h2 {
   grid-row: 2 / span 5;
 }
 
+.updates-section-list {
+  width: 100%;
+  background-color: #FFFFFF;
+  color: #505566;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 10px;
+  transition: background-color 0.3s ease;
+  display: block;
+}
+
+.updates-section-list:hover {
+  background-color: #F2F7FF;
+}
+
 .history {
   background-color: #F2F7FF;
   padding: 20px;
@@ -155,6 +171,17 @@ section h2 {
   background-color: #E4EDFD;
 }
 
+.rename-button {
+  margin-left: 10px;
+  margin-right: 1px;
+}
+.delete-button {
+  margin-left: 1px;
+  margin-right: 5px;
+}
+
+
+
 .conversation-list {
   list-style-type: none;
   margin: 0;
@@ -164,6 +191,9 @@ section h2 {
 
 .conversation-list-item {
   margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .conversation-list-item .object {
